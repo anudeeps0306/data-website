@@ -11,8 +11,7 @@ const rowsPerPageOptions = [10, 25, 100];
 const CollegeTable = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(rowsPerPageOptions[0]);
-  const [sortedData, setSortedData] = useState(data);
-  const [filteredData, setFilteredData] = useState(data);
+  const [dataToShow, setDataToShow] = useState(data);
   const [sortBy, setSortBy] = useState(null); // 'Min_Score' or 'Max_Score'
   const [sortOrder, setSortOrder] = useState('asc'); // 'asc' or 'desc'
   const [categoryFilter, setCategoryFilter] = useState(null);
@@ -32,7 +31,7 @@ const CollegeTable = () => {
     if (sortBy === sortKey && sortOrder === 'asc') {
       order = 'desc';
     }
-    const sorted = [...filteredData].sort((a, b) => {
+    const sorted = [...dataToShow].sort((a, b) => {
       const valueA = parseFloat(a[sortKey]);
       const valueB = parseFloat(b[sortKey]);
       if (order === 'asc') {
@@ -41,7 +40,7 @@ const CollegeTable = () => {
         return valueB - valueA;
       }
     });
-    setSortedData(sorted);
+    setDataToShow(sorted);
     setSortBy(sortKey);
     setSortOrder(order);
   };
@@ -49,12 +48,8 @@ const CollegeTable = () => {
   const handleCategoryFilter = (category) => {
     setCategoryFilter(category);
     setAnchorEl(null);
-    if (category) {
-      const filtered = sortedData.filter((row) => row.Category === category);
-      setFilteredData(filtered);
-    } else {
-      setFilteredData(sortedData);
-    }
+    const filtered = category ? data.filter((row) => row.Category === category) : data;
+    setDataToShow(filtered);
   };
 
   return (
@@ -90,7 +85,7 @@ const CollegeTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {filteredData
+            {dataToShow
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row, index) => (
                 <TableRow key={index}>
@@ -109,7 +104,7 @@ const CollegeTable = () => {
       <TablePagination
         rowsPerPageOptions={rowsPerPageOptions}
         component="div"
-        count={filteredData.length}
+        count={dataToShow.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}
