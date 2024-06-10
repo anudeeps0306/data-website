@@ -1,0 +1,49 @@
+import json
+
+# Load the data from the JSON file
+json_path = '/home/avatar/opensource/ap-neet/data/MBBS_CQ_Phase1_Collegewise_Allotments.json'
+with open(json_path, 'r', encoding='utf-8') as json_file:
+    data = json.load(json_file)
+
+def filter_data(data, category=None, local_area=None, allotment_details=None, phase=None):
+    filtered_data = {}
+    
+    for college, candidates in data.items():
+        filtered_candidates = candidates
+        
+        if category:
+            filtered_candidates = [c for c in filtered_candidates if c['Category'] == category]
+        if local_area:
+            filtered_candidates = [c for c in filtered_candidates if c['Local Area'] == local_area]
+        if allotment_details:
+            filtered_candidates = [c for c in filtered_candidates if c['Allotment Details'] == allotment_details]
+        if phase:
+            filtered_candidates = [c for c in filtered_candidates if c['Phase'] == phase]
+        
+        if filtered_candidates:
+            filtered_data[college] = filtered_candidates
+    
+    return filtered_data
+
+def print_summary(filtered_data):
+    for college, candidates in filtered_data.items():
+        print(f"College: {college}")
+        print(f"Total Candidates: {len(candidates)}")
+        
+        ranks = [int(c['NEET RANK']) for c in candidates]
+        scores = [int(c['Score']) for c in candidates]
+        
+        print(f"Highest Rank: {min(ranks)}")
+        print(f"Lowest Rank: {max(ranks)}")
+        print(f"Highest Score: {max(scores)}")
+        print(f"Lowest Score: {min(scores)}")
+        print()
+
+# Example of filtering data
+category = "OC"
+local_area = "-"
+allotment_details = "UR"
+phase = "phase-1"
+
+filtered_data = filter_data(data, category=category, local_area=local_area, allotment_details=allotment_details, phase=phase)
+print_summary(filtered_data)
