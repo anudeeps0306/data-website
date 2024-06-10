@@ -62,8 +62,8 @@ for line in lines:
                 break
 
         # Extract allotment details and phase
-        allotment_details = columns[local_area_index + 1]
-        phase = columns[local_area_index + 2]
+        allotment_details = ''.join(columns[local_area_index + 1:-2])
+        phase = ' '.join(columns[-2:])
 
         # Create a row with the heading
         full_row = {
@@ -80,12 +80,43 @@ for line in lines:
         }
         data[current_heading].append(full_row)
 
-# Save the data to a JSON file
-json_path = '/home/avatar/opensource/ap-neet/data/MBBS_CQ_Phase1_Collegewise_Allotments.json'
-with open(json_path, 'w', encoding='utf-8') as json_file:
-    json.dump(data, json_file, ensure_ascii=False, indent=4)
+# Initialize the summary structure
+summary = {}
 
-print(f"Data saved to {json_path}")
+# Process the data
+for college, candidates in data.items():
+    for candidate in candidates:
+        category = candidate['Category']
+        local_area = candidate['Local Area']
+        allotment_details = candidate['Allotment Details']
+        score = int(candidate['Score'])
+        
+        # Create a unique key for the triplet
+        triplet_key = (college, category, local_area, allotment_details)
+        
+        if triplet_key not in summary:
+            summary[triplet_key] = {
+                'College': college,
+                'Category': category,
+                'Local Area': local_area,
+                'Allotment Details': allotment_details,
+                'Max Score': score,
+                'Min Score': score
+            }
+        else:
+            # Update the max and min scores
+            summary[triplet_key]['Max Score'] = max(summary[triplet_key]['Max Score'], score)
+            summary[triplet_key]['Min Score'] = min(summary[triplet_key]['Min Score'], score)
+
+# Convert the summary to a list for easier JSON serialization
+summary_list = list(summary.values())
+
+# Save the summary to a JSON file
+summary_json_path = '/home/avatar/opensource/ap-neet/data/MBBS_CQ_Phase1_Summary-3.json'
+with open(summary_json_path, 'w', encoding='utf-8') as json_file:
+    json.dump(summary_list, json_file, ensure_ascii=False, indent=4)
+
+print(f"Summary data saved to {summary_json_path}")
 
 
 
