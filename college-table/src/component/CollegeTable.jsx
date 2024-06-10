@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import {
   Table, TableBody, TableCell, TableContainer,
   TableHead, TableRow, Paper, Container, TablePagination,
-  Button, Menu, MenuItem
+  Button, Menu, MenuItem, TextField
 } from '@mui/material';
 import data from '../../public/ap-phase-1';
 
@@ -16,6 +16,7 @@ const CollegeTable = () => {
   const [sortOrder, setSortOrder] = useState('asc'); // 'asc' or 'desc'
   const [categoryFilter, setCategoryFilter] = useState(null);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -52,8 +53,24 @@ const CollegeTable = () => {
     setDataToShow(filtered);
   };
 
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+    const filteredData = data.filter((row) =>
+      row.College.toLowerCase().includes(event.target.value.toLowerCase())
+    );
+    setDataToShow(filteredData);
+  };
+
   return (
     <Container>
+      <TextField
+        label="Search by College"
+        variant="outlined"
+        fullWidth
+        margin="normal"
+        value={searchQuery}
+        onChange={handleSearch}
+      />
       <div style={{ overflowX: 'auto' }}>
         <TableContainer component={Paper}>
           <Table>
