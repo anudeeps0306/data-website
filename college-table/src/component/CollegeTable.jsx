@@ -54,53 +54,55 @@ const CollegeTable = () => {
 
   return (
     <Container>
-      <TableContainer component={Paper}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>S.no</TableCell>
-              <TableCell>College</TableCell>
-              <TableCell>
-                Category
-                <Button onClick={(e) => setAnchorEl(e.currentTarget)} variant="text" sx={{ ml: 1 }}>{categoryFilter || 'All'}</Button>
-                <Menu
-                  anchorEl={anchorEl}
-                  open={Boolean(anchorEl)}
-                  onClose={() => setAnchorEl(null)}
-                >
-                  {["OC", "SC", "ST", "BC-A", "BC-B", "BC-C", "BC-D", "BC-E", null].map((category, index) => (
-                    <MenuItem key={index} onClick={() => handleCategoryFilter(category)}>{category || 'All'}</MenuItem>
-                  ))}
-                </Menu>
-              </TableCell>
-              <TableCell>Local Area</TableCell>
-              <TableCell>Allotment Details</TableCell>
-              <TableCell>
-                Min Cutoff
-                <Button onClick={() => handleSort('Min_Score')} variant="text">{sortBy === 'Min_Score' && sortOrder === 'asc' ? '↑' : '↓'}</Button>
-              </TableCell>
-              <TableCell>
-                Max Cutoff
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {dataToShow
-              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((row, index) => (
-                <TableRow key={index}>
-                  <TableCell>{index + page * rowsPerPage + 1}</TableCell>
-                  <TableCell>{row.College}</TableCell>
-                  <TableCell>{row.Category}</TableCell>
-                  <TableCell>{row.Local_Area}</TableCell>
-                  <TableCell>{row.Allotment_Details}</TableCell>
-                  <TableCell>{row.Min_Score}</TableCell>
-                  <TableCell>{row.Max_Score}</TableCell>
-                </TableRow>
-              ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <div style={{ overflowX: 'auto' }}>
+        <TableContainer component={Paper}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>S.no</TableCell>
+                <TableCell>College</TableCell>
+                <TableCell>
+                  Category
+                  <Button onClick={(e) => setAnchorEl(e.currentTarget)} variant="text" sx={{ ml: 1 }}>{categoryFilter || 'All'}</Button>
+                  <Menu
+                    anchorEl={anchorEl}
+                    open={Boolean(anchorEl)}
+                    onClose={() => setAnchorEl(null)}
+                  >
+                    {["OC", "SC", "ST", "BC-A", "BC-B", "BC-C", "BC-D", "BC-E", null].map((category, index) => (
+                      <MenuItem key={index} onClick={() => handleCategoryFilter(category)}>{category || 'All'}</MenuItem>
+                    ))}
+                  </Menu>
+                </TableCell>
+                <TableCell>Local Area</TableCell>
+                <TableCell>Allotment Details</TableCell>
+                <TableCell>
+                  Min Cutoff
+                  <Button onClick={() => handleSort('Min_Score')} variant="text">{sortBy === 'Min_Score' && sortOrder === 'asc' ? '↑' : '↓'}</Button>
+                </TableCell>
+                <TableCell>
+                  Max Cutoff
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {dataToShow
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                .map((row, index) => (
+                  <TableRow key={index}>
+                    <TableCell>{index + page * rowsPerPage + 1}</TableCell>
+                    <TableCell>{row.College}</TableCell>
+                    <TableCell>{row.Category}</TableCell>
+                    <TableCell>{row.Local_Area}</TableCell>
+                    <TableCell>{row.Allotment_Details}</TableCell>
+                    <TableCell>{row.Min_Score}</TableCell>
+                    <TableCell>{row.Max_Score}</TableCell>
+                  </TableRow>
+                ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </div>
       <TablePagination
         rowsPerPageOptions={rowsPerPageOptions}
         component="div"

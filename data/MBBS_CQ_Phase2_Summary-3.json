@@ -1,0 +1,74 @@
+[
+    {
+        "College": "NEET RANK NEET Roll No Score Name of the Candidate Gender Category Local Area Allotment Details Phase",
+        "Category": "OC",
+        "Local_Area": null,
+        "Allotment_Details": "OthersVMCK-",
+        "Max_Score": 461,
+        "Min_Score": 164
+    },
+    {
+        "College": "NEET RANK NEET Roll No Score Name of the Candidate Gender Category Local Area Allotment Details Phase",
+        "Category": "OC",
+        "Local_Area": null,
+        "Allotment_Details": "APVMCK-",
+        "Max_Score": 430,
+        "Min_Score": 155
+    },
+    {
+        "College": "NEET RANK NEET Roll No Score Name of the Candidate Gender Category Local Area Allotment Details Phase",
+        "Category": "SC",
+        "Local_Area": null,
+        "Allotment_Details": "APVMCK-",
+        "Max_Score": 377,
+        "Min_Score": 117
+    },
+    {
+        "College": "NEET RANK NEET Roll No Score Name of the Candidate Gender Category Local Area Allotment Details Phase",
+        "Category": "ST",
+        "Local_Area": null,
+        "Allotment_Details": "APVMCK-",
+        "Max_Score": 380,
+        "Min_Score": 378
+    },
+    {
+        "College": "NEET RANK NEET Roll No Score Name of the Candidate Gender Category Local Area Allotment Details Phase",
+        "Category": "BC-A",
+        "Local_Area": null,
+        "Allotment_Details": "APVMCK-",
+        "Max_Score": 482,
+        "Min_Score": 177
+    },
+    {
+        "College": "NEET RANK NEET Roll No Score Name of the Candidate Gender Category Local Area Allotment Details Phase",
+        "Category": "BC-B",
+        "Local_Area": null,
+        "Allotment_Details": "APVMCK-",
+        "Max_Score": 378,
+        "Min_Score": 351
+    },
+    {
+        "College": "NEET RANK NEET Roll No Score Name of the Candidate Gender Category Local Area Allotment Details Phase",
+        "Category": "BC-C",
+        "Local_Area": null,
+        "Allotment_Details": "APVMCK-",
+        "Max_Score": 192,
+        "Min_Score": 192
+    },
+    {
+        "College": "NEET RANK NEET Roll No Score Name of the Candidate Gender Category Local Area Allotment Details Phase",
+        "Category": "BC-D",
+        "Local_Area": null,
+        "Allotment_Details": "APVMCK-",
+        "Max_Score": 395,
+        "Min_Score": 351
+    },
+    {
+        "College": "NEET RANK NEET Roll No Score Name of the Candidate Gender Category Local Area Allotment Details Phase",
+        "Category": "BC-E",
+        "Local_Area": null,
+        "Allotment_Details": "APVMCK-",
+        "Max_Score": 420,
+        "Min_Score": 351
+    }
+]
