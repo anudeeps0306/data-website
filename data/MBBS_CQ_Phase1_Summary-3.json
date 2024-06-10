@@ -1,4 +1,4 @@
-export default [
+[
     {
         "College": "Siddhartha Medical College, Vijayawada",
         "Category": "OC",
@@ -98,8 +98,8 @@ export default [
     {
         "College": "Siddhartha Medical College, Vijayawada",
         "Category": "OC",
-        "Local_Area": "OUAPNL",
-        "Allotment_Details": "SMCV-OU-L-OC_G",
+        "Local_Area": "OU",
+        "Allotment_Details": "OUAPNLSMCV--L-OC_G",
         "Max_Score": 603,
         "Min_Score": 601
     },
