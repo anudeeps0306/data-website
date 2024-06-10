@@ -12,7 +12,7 @@ const CollegeTable = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(rowsPerPageOptions[0]);
   const [dataToShow, setDataToShow] = useState(data);
-  const [sortBy, setSortBy] = useState(null); // 'Min_Score' or 'Max_Score'
+  const [sortBy, setSortBy] = useState(null); // 'Min_NEET_Rank' or 'Max_NEET_Rank'
   const [sortOrder, setSortOrder] = useState('asc'); // 'asc' or 'desc'
   const [categoryFilter, setCategoryFilter] = useState(null);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -78,7 +78,7 @@ const CollegeTable = () => {
                 <TableCell>Allotment Details</TableCell>
                 <TableCell>
                   Min Cutoff
-                  <Button onClick={() => handleSort('Min_Score')} variant="text">{sortBy === 'Min_Score' && sortOrder === 'asc' ? '↑' : '↓'}</Button>
+                  <Button onClick={() => handleSort('Min_NEET_Rank')} variant="text">{sortBy === 'Min_NEET_Rank' && sortOrder === 'asc' ? '↑' : '↓'}</Button>
                 </TableCell>
                 <TableCell>
                   Max Cutoff
@@ -95,8 +95,8 @@ const CollegeTable = () => {
                     <TableCell>{row.Category}</TableCell>
                     <TableCell>{row.Local_Area}</TableCell>
                     <TableCell>{row.Allotment_Details}</TableCell>
-                    <TableCell>{row.Min_Score}</TableCell>
-                    <TableCell>{row.Max_Score}</TableCell>
+                    <TableCell>{row.Min_NEET_Rank}</TableCell>
+                    <TableCell>{row.Max_NEET_Rank}</TableCell>
                   </TableRow>
                 ))}
             </TableBody>

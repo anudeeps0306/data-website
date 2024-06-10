@@ -6,7 +6,7 @@ heading_pattern = re.compile(r'^[A-Z][a-zA-Z\s,]*$')  # Adjust this regex based 
 row_pattern = re.compile(r'^\d+\s+\d+\s+\d+\s+\d+\s+.+\s+[MF]\s+\S+\s+\S+\s+.+\s+\S+\s+\S+')
 page_number_pattern = re.compile(r'^Page \d+ of \d+$')
 
-pdf_path = '/home/avatar/opensource/ap-neet/data/MBBS MQ Phase 2 Collegewise Allotments.pdf'
+pdf_path = '/home/avatar/opensource/ap-neet/data/MBBS CQ Phase1 Collegewise Allotments.pdf'
 with pdfplumber.open(pdf_path) as pdf:
     text = ""
     for page in pdf.pages:
@@ -14,15 +14,12 @@ with pdfplumber.open(pdf_path) as pdf:
 
 lines = text.split('\n')
 
-data = {}
-current_heading = None
-
-
 local_areas = {"AU", "APNL", "SVU", "NL", "OU", "OUAPNL"}
 category_list = ["OC", "SC", "ST", "BC-A", "BC-B", "BC-C", "BC-D", "BC-E"]
 phases = ["Phase 1", "Phase 2", "Phase 3"]
 
 data = {}
+current_heading = None
 
 for line in lines:
     line = line.strip()
@@ -91,22 +88,22 @@ for college, candidates in data.items():
         category = candidate['Category']
         local_area = candidate['Local_Area']
         allotment_details = candidate['Allotment_Details']
-        score = int(candidate['Score'])
-        
+        neet_rank = int(candidate['NEET RANK'])
+
         triplet_key = (college, category, local_area, allotment_details)
-        
+
         if triplet_key not in summary:
             summary[triplet_key] = {
                 'College': college,
                 'Category': category,
                 'Local_Area': local_area,
                 'Allotment_Details': allotment_details,
-                'Max_Score': score,
-                'Min_Score': score
+                'Max_NEET_Rank': neet_rank,
+                'Min_NEET_Rank': neet_rank
             }
         else:
-            summary[triplet_key]['Max_Score'] = max(summary[triplet_key]['Max_Score'], score)
-            summary[triplet_key]['Min_Score'] = min(summary[triplet_key]['Min_Score'], score)
+            summary[triplet_key]['Max_NEET_Rank'] = max(summary[triplet_key]['Max_NEET_Rank'], neet_rank)
+            summary[triplet_key]['Min_NEET_Rank'] = min(summary[triplet_key]['Min_NEET_Rank'], neet_rank)
 
 summary_list = list(summary.values())
 
@@ -115,6 +112,3 @@ with open(summary_json_path, 'w', encoding='utf-8') as json_file:
     json.dump(summary_list, json_file, ensure_ascii=False, indent=4)
 
 print(f"Summary data saved to {summary_json_path}")
-
-
-
