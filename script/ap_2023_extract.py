@@ -2,7 +2,7 @@ import re
 import pdfplumber
 import json
 
-heading_pattern = re.compile(r'^[A-Z][a-zA-Z\s,]*$')  # Adjust this regex based on your heading format
+heading_pattern = re.compile(r'^[A-Z][a-zA-Z\s,()\-]*$')  # Adjust this regex based on your heading format
 row_pattern = re.compile(r'^\d+\s+\d+\s+\d+\s+\d+\s+.+\s+[MF]\s+\S+\s+\S+\s+.+\s+\S+\s+\S+')
 page_number_pattern = re.compile(r'^Page \d+ of \d+$')
 
@@ -18,7 +18,7 @@ data = {}
 current_heading = None
 
 
-local_areas = {"AU", "APNL", "SVU", "NL", "OU", "OUAPNL"}
+local_areas = {"AU","SVU", "APNL", "NL", "OU", "OUAPNL"}
 category_list = ["OC", "SC", "ST", "BC-A", "BC-B", "BC-C", "BC-D", "BC-E"]
 phases = ["Phase 1", "Phase 2", "Phase 3"]
 

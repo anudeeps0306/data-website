@@ -2,7 +2,7 @@ import re
 import pdfplumber
 import json
 
-heading_pattern = re.compile(r'^[A-Z][a-zA-Z\s,]*$')  # Adjust this regex based on your heading format
+heading_pattern = re.compile(r'^[A-Z][a-zA-Z\s,()\-]*$')  # Adjust this regex based on your heading format
 row_pattern = re.compile(r'^\d+\s+\d+\s+\d+\s+\d+\s+.+\s+[MF]\s+\S+\s+\S+\s+.+\s+\S+\s+\S+')
 page_number_pattern = re.compile(r'^Page \d+ of \d+$')
 

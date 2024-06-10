@@ -98,8 +98,8 @@ export default [
     {
         "College": "Siddhartha Medical College, Vijayawada",
         "Category": "OC",
-        "Local_Area": "OUAPNL",
-        "Allotment_Details": "SMCV-OU-L-OC_G",
+        "Local_Area": "OU",
+        "Allotment_Details": "OUAPNLSMCV--L-OC_G",
         "Max_NEET_Rank": 28390,
         "Min_NEET_Rank": 26958
     },
@@ -7169,54 +7169,6 @@ export default [
     },
     {
         "College": "Government Medical College, Nandyal",
-        "Category": "OC",
-        "Local_Area": "AU",
-        "Allotment_Details": "PADT-APUR-OC_F",
-        "Max_NEET_Rank": 29262,
-        "Min_NEET_Rank": 25298
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "OC",
-        "Local_Area": "APNL",
-        "Allotment_Details": "PADT-APUR-OC_F",
-        "Max_NEET_Rank": 27790,
-        "Min_NEET_Rank": 27790
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "OC",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-OC_F",
-        "Max_NEET_Rank": 52111,
-        "Min_NEET_Rank": 35517
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "OC",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-EWS_F",
-        "Max_NEET_Rank": 58623,
-        "Min_NEET_Rank": 52172
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "OC",
-        "Local_Area": "AU",
-        "Allotment_Details": "PADT-APUR-OC_F-CAP",
-        "Max_NEET_Rank": 746215,
-        "Min_NEET_Rank": 746215
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "OC",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-OC_F-PH",
-        "Max_NEET_Rank": 793226,
-        "Min_NEET_Rank": 793226
-    },
-    {
-        "College": "Government Medical College, Nandyal",
         "Category": "SC",
         "Local_Area": "SVU",
         "Allotment_Details": "GMCN-APUR-SC_G",
@@ -7238,30 +7190,6 @@ export default [
         "Allotment_Details": "GMCN-L-SC_G",
         "Max_NEET_Rank": 134496,
         "Min_NEET_Rank": 130612
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "SC",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-APUR-SC_F",
-        "Max_NEET_Rank": 102749,
-        "Min_NEET_Rank": 102749
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "SC",
-        "Local_Area": "AU",
-        "Allotment_Details": "PADT-APUR-SC_F",
-        "Max_NEET_Rank": 106674,
-        "Min_NEET_Rank": 105723
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "SC",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-SC_F",
-        "Max_NEET_Rank": 140060,
-        "Min_NEET_Rank": 107217
     },
     {
         "College": "Government Medical College, Nandyal",
@@ -7289,22 +7217,6 @@ export default [
     },
     {
         "College": "Government Medical College, Nandyal",
-        "Category": "ST",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-APUR-ST_F",
-        "Max_NEET_Rank": 121565,
-        "Min_NEET_Rank": 121565
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "ST",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-ST_F",
-        "Max_NEET_Rank": 186844,
-        "Min_NEET_Rank": 153752
-    },
-    {
-        "College": "Government Medical College, Nandyal",
         "Category": "BC-A",
         "Local_Area": "AU",
         "Allotment_Details": "GMCN-APUR-BC_A_G",
@@ -7326,30 +7238,6 @@ export default [
         "Allotment_Details": "GMCN-L-BC_A_G",
         "Max_NEET_Rank": 91254,
         "Min_NEET_Rank": 89043
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "BC-A",
-        "Local_Area": "AU",
-        "Allotment_Details": "PADT-APUR-BC_A_F",
-        "Max_NEET_Rank": 55089,
-        "Min_NEET_Rank": 55089
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "BC-A",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-BC_A_F-MRC",
-        "Max_NEET_Rank": 62152,
-        "Min_NEET_Rank": 62152
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "BC-A",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-BC_A_F",
-        "Max_NEET_Rank": 91097,
-        "Min_NEET_Rank": 82085
     },
     {
         "College": "Government Medical College, Nandyal",
@@ -7377,51 +7265,11 @@ export default [
     },
     {
         "College": "Government Medical College, Nandyal",
-        "Category": "BC-B",
-        "Local_Area": "APNL",
-        "Allotment_Details": "PADT-APUR-BC_B_F-MRC",
-        "Max_NEET_Rank": 45805,
-        "Min_NEET_Rank": 45805
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "BC-B",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-OC_F",
-        "Max_NEET_Rank": 50702,
-        "Min_NEET_Rank": 50702
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "BC-B",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-BC_B_F-MRC",
-        "Max_NEET_Rank": 57900,
-        "Min_NEET_Rank": 57900
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "BC-B",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-BC_B_F",
-        "Max_NEET_Rank": 87120,
-        "Min_NEET_Rank": 71439
-    },
-    {
-        "College": "Government Medical College, Nandyal",
         "Category": "BC-C",
         "Local_Area": "SVU",
         "Allotment_Details": "GMCN-L-BC_C_G",
         "Max_NEET_Rank": 130166,
         "Min_NEET_Rank": 117680
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "BC-C",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-BC_C_F",
-        "Max_NEET_Rank": 121670,
-        "Min_NEET_Rank": 121670
     },
     {
         "College": "Government Medical College, Nandyal",
@@ -7449,30 +7297,6 @@ export default [
     },
     {
         "College": "Government Medical College, Nandyal",
-        "Category": "BC-D",
-        "Local_Area": "AU",
-        "Allotment_Details": "PADT-APUR-BC_D_F-MRC",
-        "Max_NEET_Rank": 42787,
-        "Min_NEET_Rank": 34269
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "BC-D",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-BC_D_F-MRC",
-        "Max_NEET_Rank": 56860,
-        "Min_NEET_Rank": 56860
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "BC-D",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-BC_D_F",
-        "Max_NEET_Rank": 90303,
-        "Min_NEET_Rank": 72087
-    },
-    {
-        "College": "Government Medical College, Nandyal",
         "Category": "BC-E",
         "Local_Area": "SVU",
         "Allotment_Details": "GMCN-L-BC_E_G",
@@ -7488,7 +7312,183 @@ export default [
         "Min_NEET_Rank": 81228
     },
     {
-        "College": "Government Medical College, Nandyal",
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "OC",
+        "Local_Area": "AU",
+        "Allotment_Details": "PADT-APUR-OC_F",
+        "Max_NEET_Rank": 29262,
+        "Min_NEET_Rank": 25298
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "OC",
+        "Local_Area": "APNL",
+        "Allotment_Details": "PADT-APUR-OC_F",
+        "Max_NEET_Rank": 27790,
+        "Min_NEET_Rank": 27790
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "OC",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-OC_F",
+        "Max_NEET_Rank": 52111,
+        "Min_NEET_Rank": 35517
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "OC",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-EWS_F",
+        "Max_NEET_Rank": 58623,
+        "Min_NEET_Rank": 52172
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "OC",
+        "Local_Area": "AU",
+        "Allotment_Details": "PADT-APUR-OC_F-CAP",
+        "Max_NEET_Rank": 746215,
+        "Min_NEET_Rank": 746215
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "OC",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-OC_F-PH",
+        "Max_NEET_Rank": 793226,
+        "Min_NEET_Rank": 793226
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "SC",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-APUR-SC_F",
+        "Max_NEET_Rank": 102749,
+        "Min_NEET_Rank": 102749
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "SC",
+        "Local_Area": "AU",
+        "Allotment_Details": "PADT-APUR-SC_F",
+        "Max_NEET_Rank": 106674,
+        "Min_NEET_Rank": 105723
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "SC",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-SC_F",
+        "Max_NEET_Rank": 140060,
+        "Min_NEET_Rank": 107217
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "ST",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-APUR-ST_F",
+        "Max_NEET_Rank": 121565,
+        "Min_NEET_Rank": 121565
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "ST",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-ST_F",
+        "Max_NEET_Rank": 186844,
+        "Min_NEET_Rank": 153752
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-A",
+        "Local_Area": "AU",
+        "Allotment_Details": "PADT-APUR-BC_A_F",
+        "Max_NEET_Rank": 55089,
+        "Min_NEET_Rank": 55089
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-A",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-BC_A_F-MRC",
+        "Max_NEET_Rank": 62152,
+        "Min_NEET_Rank": 62152
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-A",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-BC_A_F",
+        "Max_NEET_Rank": 91097,
+        "Min_NEET_Rank": 82085
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-B",
+        "Local_Area": "APNL",
+        "Allotment_Details": "PADT-APUR-BC_B_F-MRC",
+        "Max_NEET_Rank": 45805,
+        "Min_NEET_Rank": 45805
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-B",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-OC_F",
+        "Max_NEET_Rank": 50702,
+        "Min_NEET_Rank": 50702
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-B",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-BC_B_F-MRC",
+        "Max_NEET_Rank": 57900,
+        "Min_NEET_Rank": 57900
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-B",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-BC_B_F",
+        "Max_NEET_Rank": 87120,
+        "Min_NEET_Rank": 71439
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-C",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-BC_C_F",
+        "Max_NEET_Rank": 121670,
+        "Min_NEET_Rank": 121670
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-D",
+        "Local_Area": "AU",
+        "Allotment_Details": "PADT-APUR-BC_D_F-MRC",
+        "Max_NEET_Rank": 42787,
+        "Min_NEET_Rank": 34269
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-D",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-BC_D_F-MRC",
+        "Max_NEET_Rank": 56860,
+        "Min_NEET_Rank": 56860
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-D",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-BC_D_F",
+        "Max_NEET_Rank": 90303,
+        "Min_NEET_Rank": 72087
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
         "Category": "BC-E",
         "Local_Area": "SVU",
         "Allotment_Details": "PADT-APUR-BC_E_F",
@@ -7496,7 +7496,7 @@ export default [
         "Min_NEET_Rank": 69480
     },
     {
-        "College": "Government Medical College, Nandyal",
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
         "Category": "BC-E",
         "Local_Area": "SVU",
         "Allotment_Details": "PADT-L-BC_E_F",

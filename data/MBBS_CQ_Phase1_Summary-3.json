@@ -98,8 +98,8 @@
     {
         "College": "Siddhartha Medical College, Vijayawada",
         "Category": "OC",
-        "Local_Area": "OU",
-        "Allotment_Details": "OUAPNLSMCV--L-OC_G",
+        "Local_Area": "OUAPNL",
+        "Allotment_Details": "SMCV-OU-L-OC_G",
         "Max_Score": 603,
         "Min_Score": 601
     },
@@ -7169,54 +7169,6 @@
     },
     {
         "College": "Government Medical College, Nandyal",
-        "Category": "OC",
-        "Local_Area": "AU",
-        "Allotment_Details": "PADT-APUR-OC_F",
-        "Max_Score": 606,
-        "Min_Score": 600
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "OC",
-        "Local_Area": "APNL",
-        "Allotment_Details": "PADT-APUR-OC_F",
-        "Max_Score": 602,
-        "Min_Score": 602
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "OC",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-OC_F",
-        "Max_Score": 589,
-        "Min_Score": 565
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "OC",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-EWS_F",
-        "Max_Score": 565,
-        "Min_Score": 557
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "OC",
-        "Local_Area": "AU",
-        "Allotment_Details": "PADT-APUR-OC_F-CAP",
-        "Max_Score": 192,
-        "Min_Score": 192
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "OC",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-OC_F-PH",
-        "Max_Score": 181,
-        "Min_Score": 181
-    },
-    {
-        "College": "Government Medical College, Nandyal",
         "Category": "SC",
         "Local_Area": "SVU",
         "Allotment_Details": "GMCN-APUR-SC_G",
@@ -7238,30 +7190,6 @@
         "Allotment_Details": "GMCN-L-SC_G",
         "Max_Score": 479,
         "Min_Score": 475
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "SC",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-APUR-SC_F",
-        "Max_Score": 506,
-        "Min_Score": 506
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "SC",
-        "Local_Area": "AU",
-        "Allotment_Details": "PADT-APUR-SC_F",
-        "Max_Score": 503,
-        "Min_Score": 502
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "SC",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-SC_F",
-        "Max_Score": 501,
-        "Min_Score": 470
     },
     {
         "College": "Government Medical College, Nandyal",
@@ -7289,22 +7217,6 @@
     },
     {
         "College": "Government Medical College, Nandyal",
-        "Category": "ST",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-APUR-ST_F",
-        "Max_Score": 487,
-        "Min_Score": 487
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "ST",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-ST_F",
-        "Max_Score": 458,
-        "Min_Score": 431
-    },
-    {
-        "College": "Government Medical College, Nandyal",
         "Category": "BC-A",
         "Local_Area": "AU",
         "Allotment_Details": "GMCN-APUR-BC_A_G",
@@ -7325,30 +7237,6 @@
         "Local_Area": "SVU",
         "Allotment_Details": "GMCN-L-BC_A_G",
         "Max_Score": 521,
-        "Min_Score": 518
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "BC-A",
-        "Local_Area": "AU",
-        "Allotment_Details": "PADT-APUR-BC_A_F",
-        "Max_Score": 561,
-        "Min_Score": 561
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "BC-A",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-BC_A_F-MRC",
-        "Max_Score": 552,
-        "Min_Score": 552
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "BC-A",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-BC_A_F",
-        "Max_Score": 528,
         "Min_Score": 518
     },
     {
@@ -7377,51 +7265,11 @@
     },
     {
         "College": "Government Medical College, Nandyal",
-        "Category": "BC-B",
-        "Local_Area": "APNL",
-        "Allotment_Details": "PADT-APUR-BC_B_F-MRC",
-        "Max_Score": 574,
-        "Min_Score": 574
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "BC-B",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-OC_F",
-        "Max_Score": 567,
-        "Min_Score": 567
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "BC-B",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-BC_B_F-MRC",
-        "Max_Score": 558,
-        "Min_Score": 558
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "BC-B",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-BC_B_F",
-        "Max_Score": 541,
-        "Min_Score": 523
-    },
-    {
-        "College": "Government Medical College, Nandyal",
         "Category": "BC-C",
         "Local_Area": "SVU",
         "Allotment_Details": "GMCN-L-BC_C_G",
         "Max_Score": 491,
         "Min_Score": 479
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "BC-C",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-BC_C_F",
-        "Max_Score": 487,
-        "Min_Score": 487
     },
     {
         "College": "Government Medical College, Nandyal",
@@ -7449,30 +7297,6 @@
     },
     {
         "College": "Government Medical College, Nandyal",
-        "Category": "BC-D",
-        "Local_Area": "AU",
-        "Allotment_Details": "PADT-APUR-BC_D_F-MRC",
-        "Max_Score": 591,
-        "Min_Score": 578
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "BC-D",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-BC_D_F-MRC",
-        "Max_Score": 559,
-        "Min_Score": 559
-    },
-    {
-        "College": "Government Medical College, Nandyal",
-        "Category": "BC-D",
-        "Local_Area": "SVU",
-        "Allotment_Details": "PADT-L-BC_D_F",
-        "Max_Score": 540,
-        "Min_Score": 519
-    },
-    {
-        "College": "Government Medical College, Nandyal",
         "Category": "BC-E",
         "Local_Area": "SVU",
         "Allotment_Details": "GMCN-L-BC_E_G",
@@ -7488,7 +7312,183 @@
         "Min_Score": 520
     },
     {
-        "College": "Government Medical College, Nandyal",
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "OC",
+        "Local_Area": "AU",
+        "Allotment_Details": "PADT-APUR-OC_F",
+        "Max_Score": 606,
+        "Min_Score": 600
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "OC",
+        "Local_Area": "APNL",
+        "Allotment_Details": "PADT-APUR-OC_F",
+        "Max_Score": 602,
+        "Min_Score": 602
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "OC",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-OC_F",
+        "Max_Score": 589,
+        "Min_Score": 565
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "OC",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-EWS_F",
+        "Max_Score": 565,
+        "Min_Score": 557
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "OC",
+        "Local_Area": "AU",
+        "Allotment_Details": "PADT-APUR-OC_F-CAP",
+        "Max_Score": 192,
+        "Min_Score": 192
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "OC",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-OC_F-PH",
+        "Max_Score": 181,
+        "Min_Score": 181
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "SC",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-APUR-SC_F",
+        "Max_Score": 506,
+        "Min_Score": 506
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "SC",
+        "Local_Area": "AU",
+        "Allotment_Details": "PADT-APUR-SC_F",
+        "Max_Score": 503,
+        "Min_Score": 502
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "SC",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-SC_F",
+        "Max_Score": 501,
+        "Min_Score": 470
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "ST",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-APUR-ST_F",
+        "Max_Score": 487,
+        "Min_Score": 487
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "ST",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-ST_F",
+        "Max_Score": 458,
+        "Min_Score": 431
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-A",
+        "Local_Area": "AU",
+        "Allotment_Details": "PADT-APUR-BC_A_F",
+        "Max_Score": 561,
+        "Min_Score": 561
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-A",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-BC_A_F-MRC",
+        "Max_Score": 552,
+        "Min_Score": 552
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-A",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-BC_A_F",
+        "Max_Score": 528,
+        "Min_Score": 518
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-B",
+        "Local_Area": "APNL",
+        "Allotment_Details": "PADT-APUR-BC_B_F-MRC",
+        "Max_Score": 574,
+        "Min_Score": 574
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-B",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-OC_F",
+        "Max_Score": 567,
+        "Min_Score": 567
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-B",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-BC_B_F-MRC",
+        "Max_Score": 558,
+        "Min_Score": 558
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-B",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-BC_B_F",
+        "Max_Score": 541,
+        "Min_Score": 523
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-C",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-BC_C_F",
+        "Max_Score": 487,
+        "Min_Score": 487
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-D",
+        "Local_Area": "AU",
+        "Allotment_Details": "PADT-APUR-BC_D_F-MRC",
+        "Max_Score": 591,
+        "Min_Score": 578
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-D",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-BC_D_F-MRC",
+        "Max_Score": 559,
+        "Min_Score": 559
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
+        "Category": "BC-D",
+        "Local_Area": "SVU",
+        "Allotment_Details": "PADT-L-BC_D_F",
+        "Max_Score": 540,
+        "Min_Score": 519
+    },
+    {
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
         "Category": "BC-E",
         "Local_Area": "SVU",
         "Allotment_Details": "PADT-APUR-BC_E_F",
@@ -7496,7 +7496,7 @@
         "Min_Score": 543
     },
     {
-        "College": "Government Medical College, Nandyal",
+        "College": "Sri Padmavathi Medical College for Women, Tirupati (under SVIMS)",
         "Category": "BC-E",
         "Local_Area": "SVU",
         "Allotment_Details": "PADT-L-BC_E_F",
