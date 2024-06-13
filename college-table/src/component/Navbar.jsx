@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="bg-[#222831] text-[#EEEEEE] p-4">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <Link to="/" className="text-xl font-semibold">Cutoff</Link>
+          <Link to="/" className="text-xl font-semibold">NEET CUTOFF</Link>
         </div>
         <ul className="flex space-x-4">
           <li>
