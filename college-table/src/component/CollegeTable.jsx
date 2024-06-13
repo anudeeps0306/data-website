@@ -139,9 +139,10 @@ const CollegeTable = () => {
 
   useEffect(() => {
     applyFilters();
-  }, [categoryFilter, localAreaFilter, collegeFilter, searchQuery]);
+  }, [categoryFilter, localAreaFilter, collegeFilter, searchQuery, applyFilters]);
 
   return (
+    <div className='mt-6 mb-6'>
     <Container>
       <TextField
         label="Search by College"
@@ -253,6 +254,7 @@ const CollegeTable = () => {
         onRowsPerPageChange={handleChangeRowsPerPage}
       />
     </Container>
+    </div>
   );
 };
 
