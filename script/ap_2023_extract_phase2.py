@@ -1,12 +1,18 @@
 import re
 import pdfplumber
 import json
+import os
 
-heading_pattern = re.compile(r'^[A-Z][a-zA-Z\s,()\-]*$')  # Adjust this regex based on your heading format
+# Define the patterns for headings, rows, and page numbers
+heading_pattern = re.compile(r'^[A-Z][a-zA-Z\s,()\-]*$')
 row_pattern = re.compile(r'^\d+\s+\d+\s+\d+\s+\d+\s+.+\s+[MF]\s+\S+\s+\S+\s+.+\s+\S+\s+\S+')
 page_number_pattern = re.compile(r'^Page \d+ of \d+$')
 
-pdf_path = '/home/avatar/opensource/ap-neet/data/MBBS CQ Phase1 Collegewise Allotments.pdf'
+# Define the path to the PDF and the output JSON file
+pdf_path = '/home/avatar/opensource/ap-neet/data/MBBS MQ Phase 2 Collegewise Allotments.pdf'
+summary_json_path = '/home/avatar/opensource/ap-neet/data/MBBS_CQ_Phase1_Summary-3.json'
+
+# Read the text from the PDF
 with pdfplumber.open(pdf_path) as pdf:
     text = ""
     for page in pdf.pages:
@@ -14,13 +20,16 @@ with pdfplumber.open(pdf_path) as pdf:
 
 lines = text.split('\n')
 
-local_areas = {"AU", "APNL", "SVU", "NL", "OU", "OUAPNL"}
-category_list = ["OC", "SC", "ST", "BC-A", "BC-B", "BC-C", "BC-D", "BC-E"]
-phases = ["Phase 1", "Phase 2", "Phase 3"]
-
+# Initialize data structures
 data = {}
 current_heading = None
 
+# Define lists of local areas, categories, and phases
+local_areas = {"AU","SVU", "APNL", "NL", "OU", "OUAPNL"}
+category_list = ["OC", "SC", "ST", "BC-A", "BC-B", "BC-C", "BC-D", "BC-E"]
+phases = ["Phase1", "Phase2"]
+
+# Parse the lines of text
 for line in lines:
     line = line.strip()
     if page_number_pattern.match(line):
@@ -78,37 +87,56 @@ for line in lines:
         }
         data[current_heading].append(full_row)
 
+# Sort the candidates within each college by category
 for college, candidates in data.items():
     data[college] = sorted(candidates, key=lambda x: category_list.index(x['Category']))
 
+# Initialize the summary data structure
 summary = {}
 
+# Create the summary
 for college, candidates in data.items():
     for candidate in candidates:
         category = candidate['Category']
         local_area = candidate['Local_Area']
         allotment_details = candidate['Allotment_Details']
-        neet_rank = int(candidate['NEET RANK'])
-
+        score = int(candidate['Score'])
+        phase = candidate['Phase']
+        
         triplet_key = (college, category, local_area, allotment_details)
-
+        
         if triplet_key not in summary:
+            if(phase == 'Phase1'):
+                phase = 'Phase 1'
+            else:
+                phase = 'Phase 2'
             summary[triplet_key] = {
                 'College': college,
                 'Category': category,
                 'Local_Area': local_area,
                 'Allotment_Details': allotment_details,
-                'Max_NEET_Rank': neet_rank,
-                'Min_NEET_Rank': neet_rank
+                'Max_Score': score,
+                'Min_Score': score,
+                'Phase': phase,
             }
         else:
-            summary[triplet_key]['Max_NEET_Rank'] = max(summary[triplet_key]['Max_NEET_Rank'], neet_rank)
-            summary[triplet_key]['Min_NEET_Rank'] = min(summary[triplet_key]['Min_NEET_Rank'], neet_rank)
+            summary[triplet_key]['Max_Score'] = max(summary[triplet_key]['Max_Score'], score)
+            summary[triplet_key]['Min_Score'] = min(summary[triplet_key]['Min_Score'], score)
 
 summary_list = list(summary.values())
 
-summary_json_path = '/home/avatar/opensource/ap-neet/data/MBBS_CQ_Phase2_Summary-3.json'
+# Read the existing JSON data if the file exists
+if os.path.exists(summary_json_path):
+    with open(summary_json_path, 'r', encoding='utf-8') as json_file:
+        existing_data = json.load(json_file)
+else:
+    existing_data = []
+
+# Append the new summary data to the existing data
+existing_data.extend(summary_list)
+
+# Write the combined data back to the JSON file
 with open(summary_json_path, 'w', encoding='utf-8') as json_file:
-    json.dump(summary_list, json_file, ensure_ascii=False, indent=4)
+    json.dump(existing_data, json_file, ensure_ascii=False, indent=4)
 
 print(f"Summary data saved to {summary_json_path}")

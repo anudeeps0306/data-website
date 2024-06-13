@@ -92,6 +92,7 @@ for college, candidates in data.items():
         local_area = candidate['Local_Area']
         allotment_details = candidate['Allotment_Details']
         score = int(candidate['Score'])
+        phase = candidate['Phase']
         
         triplet_key = (college, category, local_area, allotment_details)
         
@@ -102,7 +103,8 @@ for college, candidates in data.items():
                 'Local_Area': local_area,
                 'Allotment_Details': allotment_details,
                 'Max_Score': score,
-                'Min_Score': score
+                'Min_Score': score,
+                'Phase': phase,
             }
         else:
             summary[triplet_key]['Max_Score'] = max(summary[triplet_key]['Max_Score'], score)
