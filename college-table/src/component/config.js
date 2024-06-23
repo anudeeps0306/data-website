@@ -65,10 +65,10 @@ const configs = {
           "Phase 1": {
             dataSource: '../../public/ka-phase-1',
             columns: [
-              { field: 'SL_NO', headerName: 'College' },
-              { field: 'Rank', headerName: 'Category' },
+              { field: 'SL_NO', headerName: 'Sl.No' },
+              { field: 'Rank', headerName: 'Rank' },
               { field: 'College_Type', headerName: 'College Type' },
-              { field: 'Name_of_the_Medical_College_Allotted.', headerName: 'College' },
+              { field: 'College', headerName: 'College' },
               { field: 'Course_Name', headerName: 'Course Name' },
               { field: 'Allotted_Category', headerName: 'Category' },
               { field: 'Course_fees', headerName: 'Course fees' },

@@ -7,7 +7,7 @@ import {
 import configs from './config';
 
 const loadData = (state, phase) => {
-  return import(configs[state].phases[phase].dataSource).then(module => module.default);
+  return import(`${configs[state].phases[phase].dataSource}`).then(module => module.default);
 };
 
 const rowsPerPageOptions = [10, 25, 100];
@@ -86,10 +86,19 @@ const CollegeTable = () => {
     }
 
     for (const filter in filterStates) {
+      console.log(filter ,"+",filterStates[filter]);
       if (filterStates[filter] && filterStates[filter] !== 'All') {
-        filteredData = filteredData.filter((row) => row[filter] === filterStates[filter]);
+        // console.log(filterStates[filter], filter);
+        filteredData = filteredData.filter((row) => 
+          {
+            console.log(row,"+",row[filter]);
+            return row[filter] === filterStates[filter]
+            // console.log(row,"+".row[filter], "+",filterStates[filter],"+",filter);
+      });
       }
     }
+
+    console.log(filteredData);
 
     setDataToShow(filteredData);
   }, [data, filterStates, searchQuery]);
