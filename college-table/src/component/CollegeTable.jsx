@@ -42,7 +42,7 @@ const CollegeTable = () => {
     const fetchData = async () => {
       setLoading(true); // Set loading to true before starting data fetch
       try {
-        const response = await axios.post('http://localhost:8085/get-data', {
+        const response = await axios.post('https://data-backend-ra9x.onrender.com/get-data', {
           region: selectedState
         });
         setData(response.data);
