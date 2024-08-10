@@ -2,13 +2,11 @@ import { useEffect, useState, useCallback } from 'react';
 import {
   Table, TableBody, TableCell, TableContainer,
   TableHead, TableRow, Paper, Container, TablePagination,
-  Button, Menu, MenuItem, TextField, Select, FormControl, InputLabel
+  Button, Menu, MenuItem, TextField, Select, FormControl, InputLabel,
+  CircularProgress, Box
 } from '@mui/material';
 import configs from './config';
-
-const loadData = (state, phase) => {
-  return import(`${configs[state].phases[phase].dataSource}`).then(module => module.default);
-};
+import axios from 'axios';
 
 const rowsPerPageOptions = [10, 25, 100];
 const states = Object.keys(configs);
@@ -25,6 +23,7 @@ const CollegeTable = () => {
   const [filterStates, setFilterStates] = useState({});
   const [menus, setMenus] = useState({});
   const [searchQuery, setSearchQuery] = useState("");
+  const [loading, setLoading] = useState(false);  // New loading state
 
   const currentConfig = configs[selectedState].phases[selectedPhase];
 
@@ -40,11 +39,23 @@ const CollegeTable = () => {
   }, [currentConfig]);
 
   useEffect(() => {
-    loadData(selectedState, selectedPhase).then(data => {
-      setData(data);
-      setDataToShow(data);
-      initializeFilters();
-    });
+    const fetchData = async () => {
+      setLoading(true); // Set loading to true before starting data fetch
+      try {
+        const response = await axios.post('http://localhost:8085/get-data', {
+          region: selectedState
+        });
+        setData(response.data);
+        setDataToShow(response.data);
+        initializeFilters();
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false); // Set loading to false once data fetch is complete
+      }
+    };
+
+    fetchData();
   }, [selectedState, selectedPhase, initializeFilters]);
 
   const handleChangePage = (event, newPage) => {
@@ -64,7 +75,7 @@ const CollegeTable = () => {
     const sorted = [...dataToShow].sort((a, b) => {
       const valueA = parseFloat(a[sortKey]);
       const valueB = parseFloat(b[sortKey]);
-      
+
       if (order === 'asc') {
         return valueA - valueB;
       } else {
@@ -86,19 +97,12 @@ const CollegeTable = () => {
     }
 
     for (const filter in filterStates) {
-      console.log(filter ,"+",filterStates[filter]);
       if (filterStates[filter] && filterStates[filter] !== 'All') {
-        // console.log(filterStates[filter], filter);
-        filteredData = filteredData.filter((row) => 
-          {
-            console.log(row,"+",row[filter]);
-            return row[filter] === filterStates[filter]
-            // console.log(row,"+".row[filter], "+",filterStates[filter],"+",filter);
-      });
+        filteredData = filteredData.filter((row) =>
+          row[filter] === filterStates[filter]
+        );
       }
     }
-
-    console.log(filteredData);
 
     setDataToShow(filteredData);
   }, [data, filterStates, searchQuery]);
@@ -195,48 +199,56 @@ const CollegeTable = () => {
             Clear Filters
           </Button>
         </div>
-        <div style={{ overflowX: 'auto' }}>
-          <TableContainer component={Paper}>
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell>S.no</TableCell>
-                  {currentConfig.columns.map((col, index) => (
-                    <TableCell key={index}>
-                      {col.headerName}
-                      {currentConfig.filters.order[col.field] && (
-                        <Button onClick={() => handleSort(col.field)} variant="text">
-                          {sortBy === col.field && sortOrder === 'asc' ? '↑' : '↓'}
-                        </Button>
-                      )}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {dataToShow
-                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  .map((row, index) => (
-                    <TableRow key={index}>
-                      <TableCell>{index + page * rowsPerPage + 1}</TableCell>
-                      {currentConfig.columns.map((col, colIndex) => (
-                        <TableCell key={colIndex}>{row[col.field]}</TableCell>
+        {loading ? (
+          <Box display="flex" justifyContent="center" alignItems="center" sx={{ mt: 4 }}>
+            <CircularProgress />
+          </Box>
+        ) : (
+          <>
+            <div style={{ overflowX: 'auto' }}>
+              <TableContainer component={Paper}>
+                <Table>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>S.no</TableCell>
+                      {currentConfig.columns.map((col, index) => (
+                        <TableCell key={index}>
+                          {col.headerName}
+                          {currentConfig.filters.order[col.field] && (
+                            <Button onClick={() => handleSort(col.field)} variant="text">
+                              {sortBy === col.field && sortOrder === 'asc' ? '↑' : '↓'}
+                            </Button>
+                          )}
+                        </TableCell>
                       ))}
                     </TableRow>
-                  ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </div>
-        <TablePagination
-          rowsPerPageOptions={rowsPerPageOptions}
-          component="div"
-          count={dataToShow.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-        />
+                  </TableHead>
+                  <TableBody>
+                    {dataToShow
+                      .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                      .map((row, index) => (
+                        <TableRow key={index}>
+                          <TableCell>{index + page * rowsPerPage + 1}</TableCell>
+                          {currentConfig.columns.map((col, colIndex) => (
+                            <TableCell key={colIndex}>{row[col.field]}</TableCell>
+                          ))}
+                        </TableRow>
+                      ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </div>
+            <TablePagination
+              rowsPerPageOptions={rowsPerPageOptions}
+              component="div"
+              count={dataToShow.length}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              onPageChange={handleChangePage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+            />
+          </>
+        )}
       </Container>
     </div>
   );

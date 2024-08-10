@@ -6,10 +6,10 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-        external: [
-            "college-table/public/ap-phase-1.js",
-            "college-table/public/ap-phase-2.js",
-        ]
-    }
-},
+      external: [
+        'ap-phase-1',
+        'ka-phase-1',
+      ],
+    },
+  },
 })

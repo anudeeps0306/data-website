@@ -1,4 +1,8 @@
-  // config.js
+import apPhase1Data from '../../public/ap-phase-1';
+import kaPhase1Data from '../../public/ka-phase-1';
+
+
+ // config.js
 const configs = {
     "Andhra Pradesh": {
       phases: {
