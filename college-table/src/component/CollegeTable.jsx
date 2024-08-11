@@ -3,7 +3,7 @@ import {
   Table, TableBody, TableCell, TableContainer,
   TableHead, TableRow, Paper, Container, TablePagination,
   Button, Menu, MenuItem, TextField, Select, FormControl, InputLabel,
-  CircularProgress, Box
+  CircularProgress, Box, Dialog, DialogTitle, DialogContent, DialogActions
 } from '@mui/material';
 import configs from './config';
 import axios from 'axios';
@@ -14,6 +14,9 @@ const states = Object.keys(configs);
 const CollegeTable = () => {
   const [selectedState, setSelectedState] = useState(states[0]);
   const [selectedPhase, setSelectedPhase] = useState(Object.keys(configs[states[0]].phases)[0]);
+  const [open, setOpen] = useState(false);
+  const [score, setScore] = useState('');
+  const [predictedRank, setPredictedRank] = useState(null);
   const [data, setData] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(rowsPerPageOptions[0]);
@@ -135,6 +138,35 @@ const CollegeTable = () => {
     setSelectedPhase(e.target.value);
   };
 
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setPredictedRank(null);
+  };
+
+  const handleSubmit = () => {
+    setLoading(true);
+    fetch('https://data-backend-ra9x.onrender.com/predict-rank', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ score: parseFloat(score) }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setPredictedRank(data.predicted_rank);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        setLoading(false);
+      });
+  };
+
   return (
     <div className='mt-6 mb-6'>
       <Container>
@@ -172,6 +204,48 @@ const CollegeTable = () => {
           value={searchQuery}
           onChange={handleSearch}
         />
+        <Button 
+          variant="contained" 
+          color="primary" 
+          onClick={handleClickOpen}
+          sx={{ mb: 3 }}
+        >
+          Predict 2024 Rank
+        </Button>
+        <Dialog open={open} onClose={handleClose}>
+          <DialogTitle>Predict 2024 Rank</DialogTitle>
+          <DialogContent>
+            <TextField
+              autoFocus
+              margin="dense"
+              label="Enter Your Score"
+              type="number"
+              fullWidth
+              variant="outlined"
+              value={score}
+              onChange={(e) => setScore(e.target.value)}
+            />
+            {loading ? (
+              <Box display="flex" justifyContent="center" alignItems="center" sx={{ mt: 2 }}>
+                <CircularProgress />
+              </Box>
+            ) : (
+              predictedRank !== null && (
+                <Box mt={2}>
+                  <h3>Predicted Rank: {predictedRank}</h3>
+                </Box>
+              )
+            )}
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose} color="secondary">
+              Cancel
+            </Button>
+            <Button onClick={handleSubmit} color="primary">
+              Submit
+            </Button>
+          </DialogActions>
+        </Dialog>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           {Object.keys(currentConfig.filters.dropdown).map((filter, index) => (
             <div key={index}>
